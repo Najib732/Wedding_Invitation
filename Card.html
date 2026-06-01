@@ -2,231 +2,278 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Paper: International Journal of Matrimonial Engineering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>IJME — Structural Bonding Agreement</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Times New Roman', Times, serif, 'Siyam Rupali', 'Kalpurush', Arial, sans-serif;
-            background-color: #f7f9fa;
-            margin: 0;
-            padding: 10px; /* Reduced for small screens */
-            color: #222;
-        }
-        .container {
-            max-width: 850px;
-            background: #fff;
-            margin: 0 auto;
-            padding: 20px; /* Responsive default padding */
-            border: 1px solid #bbb;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-            box-sizing: border-box;
-        }
-        
-        /* Journal Header */
-        .journal-header {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #1e4620;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-        .logo-area {
-            display: flex; 
-            flex-direction: row;
-            align-items: flex-end;
-            flex-wrap: wrap;
-        }
-        .ijme-logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #1e4620;
-            line-height: 1;
-        }
-        .ijme-text {
-            font-size: 14px;
-            font-weight: bold;
-            color: #1e4620;
-            letter-spacing: 0.5px;
-            margin-left: 8px;
-            font-style: italic;
-        }
-        .volume-tag {
-            background-color: #1e4620;
-            color: white;
-            padding: 3px 8px;
-            font-size: 10px;
-            font-weight: bold;
-            white-space: nowrap;
-            margin-top: 4px;
-        }
-        
-        /* Title and Authors */
-        .paper-title {
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 15px 0;
-            line-height: 1.4;
-            color: #111;
-        }
-        .authors {
-            text-align: center;
-            font-size: 15px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .affiliations {
-            text-align: center;
-            font-size: 12px;
-            color: #444;
-            margin-bottom: 20px;
-            line-height: 1.5;
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --green: #1e4620;
+            --green-light: #f0f7f0;
+            --green-mid: #2d6a31;
+            --text: #1a1a1a;
+            --muted: #555;
+            --border: #bbb;
+            --bg: #f7f9fa;
+            --white: #fff;
+            --mono: 'Source Code Pro', monospace;
+            --serif: 'EB Garamond', Georgia, serif;
         }
 
-        /* Abstract Box */
-        .abstract-box {
-            margin: 0 10px 20px 10px;
-            text-align: justify;
-            font-size: 13px;
-            line-height: 1.6;
-            background: #fafafa;
-            padding: 15px;
-            border: 1px dashed #ccc;
+        html { font-size: 16px; }
+
+        body {
+            font-family: var(--serif);
+            background: var(--bg);
+            color: var(--text);
+            padding: clamp(8px, 3vw, 24px);
+            min-height: 100vh;
         }
-        .abstract-title {
-            font-weight: bold;
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+            padding: clamp(16px, 5vw, 52px);
+        }
+
+        /* ── Journal Header ── */
+        .journal-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 8px;
+            border-bottom: 2.5px solid var(--green);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .ijme-logo {
+            font-family: var(--mono);
+            font-size: clamp(22px, 5vw, 34px);
+            font-weight: 600;
+            color: var(--green);
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+
+        .ijme-text {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: clamp(11px, 2.5vw, 15px);
+            color: var(--green);
+            line-height: 1.2;
+            max-width: 220px;
+        }
+
+        .volume-tag {
+            font-family: var(--mono);
+            background: var(--green);
+            color: white;
+            padding: 4px 10px;
+            font-size: clamp(9px, 2vw, 11px);
+            font-weight: 600;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Paper Title ── */
+        .paper-title {
             text-align: center;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            font-size: 13px;
-            color: #1e4620;
+            font-size: clamp(15px, 3.5vw, 22px);
+            font-weight: 700;
+            line-height: 1.45;
+            margin: 18px 0 10px;
+            color: #111;
         }
+
+        .authors {
+            text-align: center;
+            font-size: clamp(13px, 2.8vw, 16px);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .affiliations {
+            text-align: center;
+            font-size: clamp(11px, 2.2vw, 13px);
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* ── Abstract ── */
+        .abstract-box {
+            margin: 0 0 22px 0;
+            background: #fafafa;
+            border: 1px dashed #ccc;
+            padding: clamp(12px, 3vw, 18px);
+            font-size: clamp(12px, 2.2vw, 13.5px);
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .abstract-title {
+            font-family: var(--mono);
+            font-weight: 600;
+            text-align: center;
+            font-size: clamp(11px, 2vw, 13px);
+            color: var(--green);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
         .keywords {
-            margin-top: 8px;
-            font-size: 12px;
+            margin-top: 10px;
+            font-size: clamp(11px, 2vw, 12.5px);
+            color: var(--muted);
         }
 
         hr.divider {
             border: 0;
-            border-top: 1px solid #adadad;
-            margin: 15px 0;
+            border-top: 1px solid #d0d0d0;
+            margin: 18px 0;
         }
 
-        /* Main Body - CSS Grid (Flexible) */
+        /* ── Two-Column Grid ── */
         .main-body {
             display: grid;
-            grid-template-columns: 1fr; /* 1 Column default for mobile */
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            font-size: clamp(13px, 2.4vw, 14.5px);
+            line-height: 1.7;
             text-align: justify;
-            font-size: 14px;
+        }
+
+        @media (min-width: 680px) {
+            .main-body {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+        }
+
+        /* ── Profile Blocks ── */
+        .profile-block {
+            background: var(--green-light);
+            border-left: 3px solid var(--green);
+            padding: 10px 14px;
+            margin-bottom: 14px;
+            font-size: clamp(12px, 2.2vw, 13.5px);
             line-height: 1.6;
         }
 
-        /* Left Column Profile Styling */
-        .profile-block {
-            background-color: #f9fbf9;
-            border-left: 3px solid #1e4620;
-            padding: 10px 15px;
-            margin-bottom: 15px;
-            font-size: 13px;
-        }
         .profile-title {
-            font-weight: bold;
-            font-size: 14px;
-            color: #1e4620;
+            font-family: var(--mono);
+            font-weight: 600;
+            font-size: clamp(10px, 2vw, 12px);
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
             margin-bottom: 5px;
-            text-transform: uppercase;
         }
 
-        /* Headings inside columns */
+        /* ── Section Headings ── */
         .section-heading {
-            font-weight: bold;
+            font-family: var(--mono);
+            font-weight: 600;
+            font-size: clamp(10px, 2vw, 12px);
             color: #111;
-            border-bottom: 1px solid #1e4620;
-            padding-bottom: 2px;
-            margin-top: 15px;
-            margin-bottom: 10px;
-            font-size: 15px;
+            border-bottom: 1.5px solid var(--green);
+            padding-bottom: 3px;
+            margin: 18px 0 10px;
             text-transform: uppercase;
+            letter-spacing: 0.6px;
         }
 
-        /* Table Styling */
+        /* ── Tables ── */
         .table-title {
             text-align: center;
-            font-weight: bold;
-            font-size: 12px;
-            margin: 15px 0 5px 0;
+            font-family: var(--mono);
+            font-size: clamp(10px, 2vw, 11.5px);
+            font-weight: 600;
+            color: var(--muted);
+            margin: 16px 0 6px;
+            letter-spacing: 0.3px;
         }
+
         .data-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 15px;
-        }
-        .data-table td {
-            border: 1px solid #444;
-            padding: 8px 10px;
-            font-size: 13px;
-            vertical-align: top;
-        }
-        .bold-cell {
-            font-weight: bold;
-            width: 30%;
-            background-color: #f2f2f2;
+            margin-bottom: 16px;
+            font-size: clamp(11.5px, 2.2vw, 13px);
         }
 
-        /* Footer styling */
+        .data-table td {
+            border: 1px solid #555;
+            padding: clamp(6px, 1.5vw, 9px) clamp(8px, 2vw, 12px);
+            vertical-align: top;
+            line-height: 1.5;
+        }
+
+        .bold-cell {
+            font-weight: 700;
+            width: 38%;
+            background: #f2f2f2;
+            white-space: nowrap;
+        }
+
+        /* ── Conclusion Stamp ── */
+        .stamp {
+            text-align: center;
+            margin-top: 22px;
+        }
+
+        .stamp span {
+            font-family: var(--mono);
+            font-size: clamp(10px, 2vw, 12px);
+            font-weight: 600;
+            border: 1.5px solid var(--green);
+            padding: 6px 14px;
+            background: var(--green-light);
+            display: inline-block;
+            letter-spacing: 0.5px;
+            color: var(--green);
+        }
+
+        /* ── Footer ── */
         .paper-footer {
-            border-top: 1px solid #1e4620;
+            border-top: 1.5px solid var(--green);
             margin-top: 30px;
             padding-top: 8px;
-            font-size: 11px;
-            color: #555;
+            font-family: var(--mono);
+            font-size: clamp(9px, 1.8vw, 11px);
+            color: var(--muted);
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
             flex-wrap: wrap;
-            gap: 5px;
+            justify-content: space-between;
+            gap: 4px;
         }
 
-        /* --- Responsive Queries for Large Screens (Tablets & PCs) --- */
-        @media (min-width: 768px) {
-            body {
-                padding: 20px;
-            }
-            .container {
-                padding: 40px 50px;
-            }
-            .ijme-logo {
-                font-size: 32px;
-            }
-            .ijme-text {
-                font-size: 16px;
-            }
-            .volume-tag {
-                font-size: 11px;
-                margin-top: 0;
-            }
-            .paper-title {
-                font-size: 22px;
-            }
-            .abstract-box {
-                margin: 0 30px 25px 30px;
-                font-size: 13.5px;
-            }
-            .main-body {
-                grid-template-columns: 1fr 1fr; /* Switch to 2 columns on PC */
-                gap: 30px;
-            }
+        p { margin-bottom: 10px; }
+        p:last-child { margin-bottom: 0; }
+
+        sup {
+            font-size: 0.7em;
+            vertical-align: super;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    
-    <!-- Academic Journal Top Header -->
+
+    <!-- Header -->
     <div class="journal-header">
         <div class="logo-area">
             <span class="ijme-logo">IJME</span>
@@ -235,26 +282,26 @@
         <div class="volume-tag">Vol. 2026, Release: 12 June</div>
     </div>
 
-    <!-- Paper Title -->
+    <!-- Title -->
     <div class="paper-title">
         Optimization of Lifelong Socio-Technical System: The Permanent Structural Bonding Agreement of Two Engineers
     </div>
 
-    <!-- Authors / Bride & Groom -->
+    <!-- Authors -->
     <div class="authors">
-        ইঞ্জিঃ তাসমিয়া কবির জেরিন<sup>1</sup> & ইঞ্জিঃ মোঃ ওয়াছি-উল-ইসলাম (অয়ন)<sup>2</sup>
+        ইঞ্জিঃ তাসমিয়া কবির জেরিন<sup>1</sup> &amp; ইঞ্জিঃ মোঃ ওয়াছি-উল-ইসলাম (অয়ন)<sup>2</sup>
     </div>
-    
-    <!-- Affiliations / Family Info -->
+
+    <!-- Affiliations -->
     <div class="affiliations">
         <sup>1</sup>পরম স্নেহের বড় কন্যা; পিতা: মোঃ হুমায়ুন কবির সরকার, মাতা: ফারহানা আক্তার জনি (মধ্যকলাদী, মতলব দক্ষিণ, চাঁদপুর)<br>
         <sup>2</sup>সর্বকনিষ্ঠ পুত্র; পিতা: মোঃ গোলাপ আলী সাহেব, মাতা: মোছাঃ আশরাফুন নাহার (তেবাড়িয়া উত্তরপাড়া, নাটোর সদর, নাটোর)
     </div>
 
-    <!-- Abstract Box -->
+    <!-- Abstract -->
     <div class="abstract-box">
         <div class="abstract-title">Abstract (সারসংক্ষেপ)</div>
-        আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ। সর্বশক্তিমান আল্লাহর অশেষ রহমতে আমাদের দুই প্রকৌশলীর (Authors) জীবনব্যাপী পারিবারিক ও মানসিক কো-অর্ডিনেশন প্যারামিটারসমূহ সফলভাবে অপ্টিমাইজড হয়েছে। দীর্ঘ পর্যালোচনার পর, ইঞ্জিঃ তাসমিয়া কবির জেরিন এবং ইঞ্জিঃ মোঃ ওয়াছি-উল-ইসলাম (অয়ন)-এর পবিত্র বিবাহ বন্ধন সম্পাদনের দিনক্ষণ চূড়ান্তভাবে নির্ধারিত হয়েছে। এই আর্টিকেলের মাধ্যমে উভয় পক্ষের নেটওয়ার্ক আর্কিটেকচার এবং অনুষ্ঠান সূচীর মেথডোলজি উপস্থাপন করা হলো। সম্মানিত রিভিউয়ারদের (অতিথিবৃন্দ) সশরীরে উপস্থিত থেকে টেস্ট-রান প্রটোকলটি পর্যবেক্ষণপূর্বক নবদম্পতির জন্য দোয়া ও आशीर्वाद করার জন্য সাদর আমন্ত্রণ জানানো যাচ্ছে।
+        আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ। সর্বশক্তিমান আল্লাহর অশেষ রহমতে আমাদের দুই প্রকৌশলীর (Authors) জীবনব্যাপী পারিবারিক ও মানসিক কো-অর্ডিনেশন প্যারামিটারসমূহ সফলভাবে অপ্টিমাইজড হয়েছে। দীর্ঘ পর্যালোচনার পর, ইঞ্জিঃ তাসমিয়া কবির জেরিন এবং ইঞ্জিঃ মোঃ ওয়াছি-উল-ইসলাম (অয়ন)-এর পবিত্র বিবাহ বন্ধন সম্পাদনের দিনক্ষণ চূড়ান্তভাবে নির্ধারিত হয়েছে। এই আর্টিকেলের মাধ্যমে উভয় পক্ষের নেটওয়ার্ক আর্কিটেকচার এবং অনুষ্ঠান সূচীর মেথডোলজি উপস্থাপন করা হলো। সম্মানিত রিভিউয়ারদের (অতিথিবৃন্দ) সশরীরে উপস্থিত থেকে টেস্ট-রান প্রটোকলটি পর্যবেক্ষণপূর্বক নবদম্পতির জন্য দোয়া ও আশীর্বাদ করার জন্য সাদর আমন্ত্রণ জানানো যাচ্ছে।
         <div class="keywords">
             <strong>Keywords:</strong> শুভ-বিবাহ, প্রকৌশলী যুগল, মতলব দক্ষিণ, সেভেন স্টার কমিউনিটি সেন্টার, প্রীতিভোজ প্রটোকল।
         </div>
@@ -262,60 +309,57 @@
 
     <hr class="divider">
 
-    <!-- Two Column Main Body (Auto-collapses on Mobile) -->
+    <!-- Two-Column Body -->
     <div class="main-body">
-        
-        <!-- COLUMN 1 -->
+
+        <!-- Column 1 -->
         <div>
-            <div class="section-heading">1. Introduction & Object Profiles</div>
-            <p style="margin: 0 0 10px 0;">
+            <div class="section-heading">1. Introduction &amp; Object Profiles</div>
+            <p>
                 সমাজবিজ্ঞান এবং প্রকৌশলবিদ্যার এক অভূতপূর্ব মেলবন্ধনে এই নতুন প্রজেক্টের সূচনা হতে যাচ্ছে। বর ও কনে পক্ষের ইনপুট প্যারামিটারসমূহ দীর্ঘ ট্রায়াল ও এরর মেথডের পর সম্পূর্ণ স্ট্যাবল আউটপুট প্রদর্শন করেছে।
             </p>
 
-            <!-- Kone Profile -->
             <div class="profile-block">
                 <div class="profile-title">কনে পরিচিতি (Subject A)</div>
                 <strong>ইঞ্জিঃ তাসমিয়া কবির জেরিন</strong><br>
                 পিতা: মোঃ হুমায়ুন কবির সরকার<br>
-                مাতা: ফারহানা আক্তার জনি<br>
+                মাতা: ফারহানা আক্তার জনি<br>
                 ঠিকানা: মধ্যকলাদী, মতলব (দক্ষিণ), চাঁদপুর।
             </div>
 
-            <!-- Bor Profile -->
             <div class="profile-block">
                 <div class="profile-title">বর পরিচিতি (Subject B)</div>
                 <strong>ইঞ্জিঃ মোঃ ওয়াছি-উল-ইসলাম (অয়ন)</strong><br>
                 পিতা: মোঃ গোলাপ আলী<br>
-                مাতা: মোছাঃ আশরাফুন নাহার<br>
+                মাতা: মোছাঃ আশরাফুন নাহার<br>
                 ঠিকানা: তেবাড়িয়া উত্তরপাড়া, নাটোর সদর, নাটোর।
             </div>
 
-            <div class="section-heading">2. Peer Reviewers & Invitation</div>
-            <p style="margin: 0 0 10px 0;">
+            <div class="section-heading">2. Peer Reviewers &amp; Invitation</div>
+            <p>
                 উক্ত শুভ অনুষ্ঠানে আপনাকে উপস্থিত থেকে নবদম্পতির জন্য দোয়া ও আশীর্বাদ কামনা করার জন্য সাদর আমন্ত্রণ জানাচ্ছি। আপনার উপস্থিতি আমাদের জন্য আনন্দ ও গৌরবের বিষয় হবে।
             </p>
 
             <div class="section-heading">3. Acknowledgement</div>
-            <p style="margin: 0; font-size: 13px; font-style: italic;">
-                <strong>অভ্যর্থনায়:</strong> আবদুন, সুবাতা, আইডিীন, নাফিউ, তাঞ্জি, তাসমির, নাওমি, নিহাল।<br>
+            <p style="font-style: italic; font-size: clamp(12px, 2.2vw, 13px);">
+                <strong>অভ্যর্থনায়:</strong> আবদুন, সুবাতা, আইডীন, নাফিউ, তাঞ্জি, তাসমির, নাওমি, নিহাল।<br>
                 <strong>শুভেচ্ছান্তে:</strong> হুমায়ুন কবির সরকার ও ফারহানা আক্তার জনি।<br>
-                <strong>প্রয়োজনে (Help Desk):</strong> ০১৭১১৯৫১৫৫৩
+                <strong>Help Desk:</strong> ০১৭১১৯৫১৫৫৩
             </p>
         </div>
 
-        <!-- COLUMN 2 -->
+        <!-- Column 2 -->
         <div>
-            <div class="section-heading">4. Methodology & Event Schedule</div>
-            <p style="margin: 0 0 10px 0;">
+            <div class="section-heading">4. Methodology &amp; Event Schedule</div>
+            <p>
                 বিবাহ বন্ধন ও ডেটা ভ্যালিডেশন প্রোটোকলটি আগামী <strong>১২ জুন, ২০২৬ খ্রিষ্টাব্দ (২৯ জ্যৈষ্ঠ, ১৪৩৩ বঙ্গাব্দ), রোজ: শুক্রবার</strong> তারিখে একটি সম্পূর্ণ নিয়ন্ত্রিত ও আনন্দঘন পরিবেশে নিচে বর্ণিত শিডিউল অনুযায়ী সম্পাদিত হবে।
             </p>
 
-            <!-- Table 1: Event Details -->
             <div class="table-title">Table 1. Wedding Event Parameters</div>
             <table class="data-table">
                 <tr>
                     <td class="bold-cell">শুভ-বিবাহ</td>
-                    <td>১২ ই জুন, ২০২৬ইং (২৯ জ্যৈষ্ঠ, ১৪৩৩ বঙ্গাব্দ)</td>
+                    <td>১২ ই জুন, ২০২৬ইং<br><small>(২৯ জ্যৈষ্ঠ, ১৪৩৩ বঙ্গাব্দ)</small></td>
                 </tr>
                 <tr>
                     <td class="bold-cell">রোজ</td>
@@ -327,36 +371,37 @@
                 </tr>
             </table>
 
-            <!-- Table 2: Reception/Feast Details -->
-            <div class="table-title">Table 2. Feast & Social Gathering Protocols</div>
+            <div class="table-title">Table 2. Feast &amp; Social Gathering Protocols</div>
             <table class="data-table">
                 <tr>
                     <td class="bold-cell">প্রীতিভোজ</td>
-                    <td>দুপুর: ২.০০ ঘটিকা</td>
+                    <td>দুপুর ২.০০ ঘটিকা</td>
                 </tr>
                 <tr>
                     <td class="bold-cell">মূল ভেন্যু</td>
-                    <td>সেভেন স্টার কমিউনিটি সেন্টার, মতলব দক্ষিণ, চাঁদপুর।<br><small>(পূর্ব কলাদি, মতলব দক্ষিণ)</small></td>
+                    <td>
+                        সেভেন স্টার কমিউনিটি সেন্টার,<br>
+                        মতলব দক্ষিণ, চাঁদপুর।<br>
+                        <small>(পূর্ব কলাদি, মতলব দক্ষিণ)</small>
+                    </td>
                 </tr>
             </table>
 
-            <div class="section-heading">5. Conclusion & Stability</div>
-            <p style="margin: 0 0 15px 0;">
+            <div class="section-heading">5. Conclusion &amp; Stability</div>
+            <p>
                 সবশেষে বলা যায় যে, এই মেকানিকাল ও কেমিক্যাল বন্ডিং-এর স্থায়ীত্ব আপনাদের আন্তরিক উপস্থিতি এবং শুভ কামনার ওপর গভীরভাবে নির্ভরশীল। আমরা আশা করছি নির্ধারিত টাইম-স্ট্যাম্পে আপনারা ভেন্যুতে উপস্থিত হয়ে অ্যালগরিদমটি সফল করবেন।
             </p>
-            
-            <div style="text-align: center; margin-top: 25px;">
-                <p style="font-size: 12px; font-weight: bold; border: 1px solid #1e4620; padding: 5px; background: #f0f7f0; display: inline-block; margin: 0;">
-                    * Peer-Reviewed & Fully Approved Ceremony *
-                </p>
+
+            <div class="stamp">
+                <span>* Peer-Reviewed &amp; Fully Approved Ceremony *</span>
             </div>
         </div>
 
     </div>
 
-    <!-- Paper Footer -->
+    <!-- Footer -->
     <div class="paper-footer">
-        <div>Manuscript received: June 2026 | Processed by Humayun Kabir & Farhana Akter</div>
+        <div>Manuscript received: June 2026 | Processed by Humayun Kabir &amp; Farhana Akter</div>
         <div>Page 1 of 1</div>
     </div>
 
