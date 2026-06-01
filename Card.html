@@ -9,60 +9,71 @@
             font-family: 'Times New Roman', Times, serif, 'Siyam Rupali', 'Kalpurush', Arial, sans-serif;
             background-color: #f7f9fa;
             margin: 0;
-            padding: 20px;
+            padding: 10px; /* Reduced for small screens */
             color: #222;
         }
         .container {
             max-width: 850px;
             background: #fff;
             margin: 0 auto;
-            padding: 40px 50px;
+            padding: 20px; /* Responsive default padding */
             border: 1px solid #bbb;
             box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            box-sizing: border-box;
         }
+        
         /* Journal Header */
         .journal-header {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #1e4620; /* Deep Green Academic Theme */
+            border-bottom: 2px solid #1e4620;
             padding-bottom: 5px;
             margin-bottom: 15px;
         }
+        .logo-area {
+            display: flex; 
+            flex-direction: row;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
         .ijme-logo {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: bold;
             color: #1e4620;
             line-height: 1;
         }
         .ijme-text {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
             color: #1e4620;
             letter-spacing: 0.5px;
-            margin-left: 10px;
+            margin-left: 8px;
             font-style: italic;
         }
         .volume-tag {
             background-color: #1e4620;
             color: white;
-            padding: 3px 10px;
-            font-size: 11px;
+            padding: 3px 8px;
+            font-size: 10px;
             font-weight: bold;
+            white-space: nowrap;
+            margin-top: 4px;
         }
         
         /* Title and Authors */
         .paper-title {
             text-align: center;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
-            margin: 20px 0 15px 0;
+            margin: 15px 0;
             line-height: 1.4;
             color: #111;
         }
         .authors {
             text-align: center;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             margin-bottom: 5px;
         }
@@ -70,15 +81,15 @@
             text-align: center;
             font-size: 12px;
             color: #444;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             line-height: 1.5;
         }
 
         /* Abstract Box */
         .abstract-box {
-            margin: 0 30px 25px 30px;
+            margin: 0 10px 20px 10px;
             text-align: justify;
-            font-size: 13.5px;
+            font-size: 13px;
             line-height: 1.6;
             background: #fafafa;
             padding: 15px;
@@ -103,11 +114,11 @@
             margin: 15px 0;
         }
 
-        /* Two Column Layout */
+        /* Main Body - CSS Grid (Flexible) */
         .main-body {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: 1fr; /* 1 Column default for mobile */
+            gap: 20px;
             text-align: justify;
             font-size: 14px;
             line-height: 1.6;
@@ -135,7 +146,7 @@
             color: #111;
             border-bottom: 1px solid #1e4620;
             padding-bottom: 2px;
-            margin-top: 20px;
+            margin-top: 15px;
             margin-bottom: 10px;
             font-size: 15px;
             text-transform: uppercase;
@@ -155,7 +166,7 @@
         }
         .data-table td {
             border: 1px solid #444;
-            padding: 6px 10px;
+            padding: 8px 10px;
             font-size: 13px;
             vertical-align: top;
         }
@@ -168,12 +179,46 @@
         /* Footer styling */
         .paper-footer {
             border-top: 1px solid #1e4620;
-            margin-top: 40px;
+            margin-top: 30px;
             padding-top: 8px;
             font-size: 11px;
             color: #555;
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        /* --- Responsive Queries for Large Screens (Tablets & PCs) --- */
+        @media (min-width: 768px) {
+            body {
+                padding: 20px;
+            }
+            .container {
+                padding: 40px 50px;
+            }
+            .ijme-logo {
+                font-size: 32px;
+            }
+            .ijme-text {
+                font-size: 16px;
+            }
+            .volume-tag {
+                font-size: 11px;
+                margin-top: 0;
+            }
+            .paper-title {
+                font-size: 22px;
+            }
+            .abstract-box {
+                margin: 0 30px 25px 30px;
+                font-size: 13.5px;
+            }
+            .main-body {
+                grid-template-columns: 1fr 1fr; /* Switch to 2 columns on PC */
+                gap: 30px;
+            }
         }
     </style>
 </head>
@@ -183,7 +228,7 @@
     
     <!-- Academic Journal Top Header -->
     <div class="journal-header">
-        <div style="display: flex; align-items: flex-end;">
+        <div class="logo-area">
             <span class="ijme-logo">IJME</span>
             <span class="ijme-text">International Journal of Matrimonial Engineering</span>
         </div>
@@ -197,19 +242,19 @@
 
     <!-- Authors / Bride & Groom -->
     <div class="authors">
-        ইঞ্জিঃ তাসমিয়া কবির জেরিন<sup>1</sup> & ইঞ্জিঃ মোঃ ওয়াছি-উল-ইসলাম (অয়ন)<sup>2</sup>
+        ইঞ্জিঃ তাসমিয়া কবির জেরিন<sup>1</sup> & ইঞ্জিঃ মোঃ ওয়াছি-উল-ইসলাম (অয়ন)<sup>2</sup>
     </div>
     
     <!-- Affiliations / Family Info -->
     <div class="affiliations">
-        <sup>1</sup>পরম স্নেহের বড় কন্যা; পিতা: মোঃ হুমায়ুন কবির সরকার, মাতা: ফারহানা আক্তার জনি (মধ্যকলাদী, মতলব দক্ষিণ, চাঁদপুর)<br>
-        <sup>2</sup>সর্বকনিষ্ঠ পুত্র; পিতা: মোঃ গোলাপ আলী সাহেব, মাতা: মোছাঃ আশরাফুন নাহার (তেবাড়িয়া উত্তরপাড়া, নাটোর সদর, নাটোর)
+        <sup>1</sup>পরম স্নেহের বড় কন্যা; পিতা: মোঃ হুমায়ুন কবির সরকার, মাতা: ফারহানা আক্তার জনি (মধ্যকলাদী, মতলব দক্ষিণ, চাঁদপুর)<br>
+        <sup>2</sup>সর্বকনিষ্ঠ পুত্র; পিতা: মোঃ গোলাপ আলী সাহেব, মাতা: মোছাঃ আশরাফুন নাহার (তেবাড়িয়া উত্তরপাড়া, নাটোর সদর, নাটোর)
     </div>
 
     <!-- Abstract Box -->
     <div class="abstract-box">
         <div class="abstract-title">Abstract (সারসংক্ষেপ)</div>
-        আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ। সর্বশক্তিমান আল্লাহর অশেষ রহমতে আমাদের দুই প্রকৌশলীর (Authors) জীবনব্যাপী পারিবারিক ও মানসিক কো-অর্ডিনেশন প্যারামিটারসমূহ সফলভাবে অপ্টিমাইজড হয়েছে। দীর্ঘ পর্যালোচনার পর, ইঞ্জিঃ তাসমিয়া কবির জেরিন এবং ইঞ্জিঃ মোঃ ওয়াছি-উল-ইসলাম (অয়ন)-এর পবিত্র বিবাহ বন্ধন সম্পাদনের দিনক্ষণ চূড়ান্তভাবে নির্ধারিত হয়েছে। এই আর্টিকেলের মাধ্যমে উভয় পক্ষের নেটওয়ার্ক আর্কিটেকচার এবং অনুষ্ঠান সূচীর মেথডোলজি উপস্থাপন করা হলো। সম্মানিত রিভিউয়ারদের (অতিথিবৃন্দ) সশরীরে উপস্থিত থেকে টেস্ট-রান প্রটোকলটি পর্যবেক্ষণপূর্বক নবদম্পতির জন্য দোয়া ও আশীর্বাদ করার জন্য সাদর আমন্ত্রণ জানানো যাচ্ছে।
+        আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ। সর্বশক্তিমান আল্লাহর অশেষ রহমতে আমাদের দুই প্রকৌশলীর (Authors) জীবনব্যাপী পারিবারিক ও মানসিক কো-অর্ডিনেশন প্যারামিটারসমূহ সফলভাবে অপ্টিমাইজড হয়েছে। দীর্ঘ পর্যালোচনার পর, ইঞ্জিঃ তাসমিয়া কবির জেরিন এবং ইঞ্জিঃ মোঃ ওয়াছি-উল-ইসলাম (অয়ন)-এর পবিত্র বিবাহ বন্ধন সম্পাদনের দিনক্ষণ চূড়ান্তভাবে নির্ধারিত হয়েছে। এই আর্টিকেলের মাধ্যমে উভয় পক্ষের নেটওয়ার্ক আর্কিটেকচার এবং অনুষ্ঠান সূচীর মেথডোলজি উপস্থাপন করা হলো। সম্মানিত রিভিউয়ারদের (অতিথিবৃন্দ) সশরীরে উপস্থিত থেকে টেস্ট-রান প্রটোকলটি পর্যবেক্ষণপূর্বক নবদম্পতির জন্য দোয়া ও आशीर्वाद করার জন্য সাদর আমন্ত্রণ জানানো যাচ্ছে।
         <div class="keywords">
             <strong>Keywords:</strong> শুভ-বিবাহ, প্রকৌশলী যুগল, মতলব দক্ষিণ, সেভেন স্টার কমিউনিটি সেন্টার, প্রীতিভোজ প্রটোকল।
         </div>
@@ -217,52 +262,52 @@
 
     <hr class="divider">
 
-    <!-- Two Column Main Body -->
+    <!-- Two Column Main Body (Auto-collapses on Mobile) -->
     <div class="main-body">
         
-        <!-- LEFT COLUMN (Introduction, Biographies & References) -->
+        <!-- COLUMN 1 -->
         <div>
             <div class="section-heading">1. Introduction & Object Profiles</div>
-            <p style="text-indent: 20px; margin: 0 0 10px 0;">
-                সমাজবিজ্ঞান এবং প্রকৌশলবিদ্যার এক অভূতপূর্ব মেলবন্ধনে এই নতুন প্রজেক্টের সূচনা হতে যাচ্ছে। বর ও কনে পক্ষের ইনপুট প্যারামিটারসমূহ দীর্ঘ ট্রায়াল ও এরর মেথডের পর সম্পূর্ণ স্ট্যাবল আউটপুট প্রদর্শন করেছে।
+            <p style="margin: 0 0 10px 0;">
+                সমাজবিজ্ঞান এবং প্রকৌশলবিদ্যার এক অভূতপূর্ব মেলবন্ধনে এই নতুন প্রজেক্টের সূচনা হতে যাচ্ছে। বর ও কনে পক্ষের ইনপুট প্যারামিটারসমূহ দীর্ঘ ট্রায়াল ও এরর মেথডের পর সম্পূর্ণ স্ট্যাবল আউটপুট প্রদর্শন করেছে।
             </p>
 
             <!-- Kone Profile -->
             <div class="profile-block">
                 <div class="profile-title">কনে পরিচিতি (Subject A)</div>
-                <strong>ইঞ্জিঃ তাসমিয়া কবির জেরিন</strong><br>
-                পিতা: মোঃ হুমায়ুন কবির সরকার<br>
-                মাতা: ফারহানা আক্তার জনি<br>
+                <strong>ইঞ্জিঃ তাসমিয়া কবির জেরিন</strong><br>
+                পিতা: মোঃ হুমায়ুন কবির সরকার<br>
+                مাতা: ফারহানা আক্তার জনি<br>
                 ঠিকানা: মধ্যকলাদী, মতলব (দক্ষিণ), চাঁদপুর।
             </div>
 
             <!-- Bor Profile -->
             <div class="profile-block">
                 <div class="profile-title">বর পরিচিতি (Subject B)</div>
-                <strong>ইঞ্জিঃ মোঃ ওয়াছি-উল-ইসলাম (অয়ন)</strong><br>
+                <strong>ইঞ্জিঃ মোঃ ওয়াছি-উল-ইসলাম (অয়ন)</strong><br>
                 পিতা: মোঃ গোলাপ আলী<br>
-                মাতা: মোছাঃ আশরাফুন নাহার<br>
-                ঠিকানা: তেবাড়িয়া উত্তরপাড়া, নাটোর সদর, নাটোর।
+                مাতা: মোছাঃ আশরাফুন নাহার<br>
+                ঠিকানা: তেবাড়িয়া উত্তরপাড়া, নাটোর সদর, নাটোর।
             </div>
 
             <div class="section-heading">2. Peer Reviewers & Invitation</div>
             <p style="margin: 0 0 10px 0;">
-                উক্ত শুভ অনুষ্ঠানে আপনাকে উপস্থিত থেকে নবদম্পতির জন্য দোয়া ও আশীর্বাদ কামনা করার জন্য সাদর আমন্ত্রণ জানাচ্ছি। আপনার উপস্থিতি আমাদের জন্য আনন্দ ও গৌরবের বিষয় হবে।
+                উক্ত শুভ অনুষ্ঠানে আপনাকে উপস্থিত থেকে নবদম্পতির জন্য দোয়া ও আশীর্বাদ কামনা করার জন্য সাদর আমন্ত্রণ জানাচ্ছি। আপনার উপস্থিতি আমাদের জন্য আনন্দ ও গৌরবের বিষয় হবে।
             </p>
 
             <div class="section-heading">3. Acknowledgement</div>
             <p style="margin: 0; font-size: 13px; font-style: italic;">
-                <strong>অভ্যর্থনায়:</strong> আবদুন, সুবাতা, আইডিীন, নাফিউ, তাঞ্জি, তাসমির, নাওমি, নিহাল।<br>
-                <strong>শুভেচ্ছান্তে:</strong> হুমায়ুন কবির সরকার ও ফারহানা আক্তার জনি।<br>
-                <strong>প্রয়োজনে (Help Desk):</strong> ০১৭১১৯৫১৫৫৩
+                <strong>অভ্যর্থনায়:</strong> আবদুন, সুবাতা, আইডিীন, নাফিউ, তাঞ্জি, তাসমির, নাওমি, নিহাল।<br>
+                <strong>শুভেচ্ছান্তে:</strong> হুমায়ুন কবির সরকার ও ফারহানা আক্তার জনি।<br>
+                <strong>প্রয়োজনে (Help Desk):</strong> ০১৭১১৯৫১৫৫৩
             </p>
         </div>
 
-        <!-- RIGHT COLUMN (Methodology, Agenda & Tables) -->
+        <!-- COLUMN 2 -->
         <div>
             <div class="section-heading">4. Methodology & Event Schedule</div>
-            <p style="text-indent: 20px; margin: 0 0 10px 0;">
-                বিবাহ বন্ধন ও ডেটা ভ্যালিডেশন প্রোটোকলটি আগামী <strong>১২ জুন, ২০২৬ খ্রিষ্টাব্দ (২৯ জ্যৈষ্ঠ, ১৪৩৩ বঙ্গাব্দ), রোজ: শুক্রবার</strong> তারিখে একটি সম্পূর্ণ নিয়ন্ত্রিত ও আনন্দঘন পরিবেশে নিচে বর্ণিত শিডিউল অনুযায়ী সম্পাদিত হবে।
+            <p style="margin: 0 0 10px 0;">
+                বিবাহ বন্ধন ও ডেটা ভ্যালিডেশন প্রোটোকলটি আগামী <strong>১২ জুন, ২০২৬ খ্রিষ্টাব্দ (২৯ জ্যৈষ্ঠ, ১৪৩৩ বঙ্গাব্দ), রোজ: শুক্রবার</strong> তারিখে একটি সম্পূর্ণ নিয়ন্ত্রিত ও আনন্দঘন পরিবেশে নিচে বর্ণিত শিডিউল অনুযায়ী সম্পাদিত হবে।
             </p>
 
             <!-- Table 1: Event Details -->
@@ -278,7 +323,7 @@
                 </tr>
                 <tr>
                     <td class="bold-cell">স্থান</td>
-                    <td>কনের পিত্রালয়</td>
+                    <td>কনের পিত্রালয়</td>
                 </tr>
             </table>
 
@@ -297,11 +342,11 @@
 
             <div class="section-heading">5. Conclusion & Stability</div>
             <p style="margin: 0 0 15px 0;">
-                সবশেষে বলা যায় যে, এই মেকানিকাল ও কেমিক্যাল বন্ডিং-এর স্থায়ীত্ব আপনাদের আন্তরিক উপস্থিতি এবং শুভ কামনার ওপর গভীরভাবে নির্ভরশীল। আমরা আশা করছি নির্ধারিত টাইম-স্ট্যাম্পে আপনারা ভেন্যুতে উপস্থিত হয়ে অ্যালগরিদমটি সফল করবেন।
+                সবশেষে বলা যায় যে, এই মেকানিকাল ও কেমিক্যাল বন্ডিং-এর স্থায়ীত্ব আপনাদের আন্তরিক উপস্থিতি এবং শুভ কামনার ওপর গভীরভাবে নির্ভরশীল। আমরা আশা করছি নির্ধারিত টাইম-স্ট্যাম্পে আপনারা ভেন্যুতে উপস্থিত হয়ে অ্যালগরিদমটি সফল করবেন।
             </p>
             
             <div style="text-align: center; margin-top: 25px;">
-                <p style="font-size: 12px; font-weight: bold; border: 1px solid #1e4620; padding: 5px; background: #f0f7f0; display: inline-block;">
+                <p style="font-size: 12px; font-weight: bold; border: 1px solid #1e4620; padding: 5px; background: #f0f7f0; display: inline-block; margin: 0;">
                     * Peer-Reviewed & Fully Approved Ceremony *
                 </p>
             </div>
